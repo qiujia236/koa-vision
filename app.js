@@ -12,6 +12,7 @@ app.use(respHeaderMiddleware)
 // 绑定第三层中间件
 const respDataMiddleware = require('./middleware/koa_response_data')
 app.use(respDataMiddleware)
+
 // 3.绑定端口号 8888
 app.listen(8888)
 console.log('已经启动')
