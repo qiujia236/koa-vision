@@ -5,7 +5,6 @@ const fileUtils = require('../utils/file_utils')
 module.exports = async (ctx, next) => {
   // 根据url
   const url = ctx.request.url // /api/seller   ../data/seller.json
-
   let filePath = url.replace('/api', '') //  /seller
   filePath = '../data' + filePath + '.json'  // ../data/seller.json
   filePath = path.join(__dirname, filePath)
@@ -20,7 +19,5 @@ module.exports = async (ctx, next) => {
     }
     ctx.response.body = JSON.stringify(errorMsg)
   }
-
-  console.log(filePath)
   await next()
 }

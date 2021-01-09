@@ -15,8 +15,7 @@ app.use(respDataMiddleware)
 
 // 3.绑定端口号 8888
 let port = process.env.PORT || 8888;
-app.listen(port);
-console.log('已经启动' + port)
+app.listen(port, () => { console.log('已经启动' + port) });
 
 const webSocketService = require('./service/web_socket_service')
 // 开启服务端的监听, 监听客户端的连接
